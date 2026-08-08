@@ -12,7 +12,10 @@ class Parent {
     int NUM = 10;
 
     // Creating the constructor of the parent class.
-    Parent() {
+    Parent(int n) {
+
+        // Setting the value of NUM of Parent class using the Parent class constructor to n.
+        this.NUM = n;
         System.out.println("Parent class constructor is initiated .....");
     }
 
@@ -28,10 +31,14 @@ class Child extends Parent {
     int NUM = 20;
 
     // Creating child class constructor.
-    Child() {
+    Child(int m, int n) {
 
+        // Passing the value of NUM to the parent class constructor using the super keyword. The super keyword must be the very first argument in the constructor.
+        super(n);
+
+        // setting the value of NUM of the Child class to m using the Child class constructor.
+        this.NUM = m;
         // Calling the parent class constructor.
-        super();
         System.out.println("Child class constructor is initiated .....");
     }
 
@@ -48,8 +55,10 @@ class Child extends Parent {
 public class Tutorial20 {
     public static void main(String[] args) {
 
-        // Initiating the object of the child class.
-        Child C = new Child();
+        // Initiating the object of the child class. And passing the value of m, n respectively.
+        Child C = new Child(30, 20);
+
+        // Calling the Greet() method of the child class.
         C.Greet();
     }    
 }
