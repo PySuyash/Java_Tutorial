@@ -1,9 +1,6 @@
 // Multithreading in Java.
 // By extending the Thread class.
 
-import java.io.*;
-import java.util.*;
-
 class MyThread extends Thread {
     public void run() {
         String str = "Thread started running .....";
